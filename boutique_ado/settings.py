@@ -8,6 +8,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -119,8 +121,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+   }
 }
+
+
 
 
 # Password validation
@@ -169,6 +173,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', 'pk_test_51IYT0GCa7WNF9pVH1ZteFBHs1CEkJV8EoX4thAGaGh0fgwrZyg98eOvKFHSIWYcgij1IFTqI6641OulkACzJOkZE00Ecygj3Hy')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'sk_test_51IYT0GCa7WNF9pVHtjHMMRJD5NzfsaJwiSYx8YiX0OJRxg1BAVZNs0F54MSYg3KAcZSHh9mKY7T39QTbZWF6ZhWx00AKHoZDWL')
-STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', 'whsec_aSH8PHLd4Eh64vHaNXA4ZvXwqEeLyJPP')
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+DEFAULT_FROM_EMAIL = 'boutiqueado@example.com'
